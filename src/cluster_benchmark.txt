@@ -1,0 +1,41 @@
+ubuntu@ip-172-31-24-199:~$ sudo sysbench --test=oltp_read_write --table-size=1000000 --db-driver=mysql --num-threads=6 --max-time=60 --max-requests=0 --mysql-db=sakila --mysql-user=root --mysql-password= --mysql
+-host=127.0.0.1  run
+WARNING: the --test option is deprecated. You can pass a script name or path on the command line without any options.
+WARNING: --num-threads is deprecated, use --threads instead
+WARNING: --max-time is deprecated, use --time instead
+sysbench 1.0.11 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 6
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+SQL statistics:
+    queries performed:
+        read:                            302288
+        write:                           86368
+        other:                           43184
+        total:                           431840
+    transactions:                        21592  (359.65 per sec.)
+    queries:                             431840 (7193.00 per sec.)
+    ignored errors:                      0      (0.00 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+General statistics:
+    total time:                          60.0326s
+    total number of events:              21592
+
+Latency (ms):
+         min:                                  4.52
+         avg:                                 16.67
+         max:                                513.59
+         95th percentile:                     26.68
+         sum:                             359989.77
+
+Threads fairness:
+    events (avg/stddev):           3598.6667/23.75
+    execution time (avg/stddev):   59.9983/0.01

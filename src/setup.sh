@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Updating package list..."
-sudo apt-get update -y
+#sudo apt-get update -y
 sudo apt-get -o DPkg::Lock::Timeout=60 update -y &>/dev/null
 echo "update Done."
 echo "Installing mysql server..."
